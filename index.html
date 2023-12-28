@@ -5,105 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio Fullstack</title>
     <link rel="icon" href="img//favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <style>
-        body { background-color: #121212; color: white; }
-        a { color: #0d6efd; }
-        a:hover { color: #0b5ed7; }
-        .bg-dark { background-color: #121212; }
-
-.neon-effect {
-    box-shadow: rgba(41, 163, 41, 0.4) -5px 5px, 
-            rgba(41, 163, 41, 0.3) -10px 10px, 
-            rgba(41, 163, 41, 0.2) -15px 15px, 
-            rgba(41, 163, 41, 0.1) -20px 20px, 
-            rgba(41, 163, 41, 0.05) -25px 25px;
-    border-radius:  50px; 
-}
-.neon-effect2 {
-    box-shadow: rgba(41, 163, 41, 0.4) -5px 5px, 
-            rgba(41, 163, 41, 0.3) -10px 10px, 
-            rgba(41, 163, 41, 0.2) -15px 15px, 
-            rgba(41, 163, 41, 0.1) -20px 20px, 
-            rgba(41, 163, 41, 0.05) -25px 25px;
-    border-radius: 5px; /* Mantém o efeito circular para uma imagem redonda */
-}
-.efeito-nome {
-    background: linear-gradient(45deg,#42ff1c, #40c9ff);
-    -webkit-background-clip: text;
-    color: transparent;
-    background-clip: text;
-}
-
-.card1 {
-
-  padding: 10px;
-  color: white;
-  background: linear-gradient(#212121, #212121) padding-box,
-              linear-gradient(145deg, transparent 35%,#42ff1c, #40c9ff) border-box;
-  border: 4px solid transparent;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  transform-origin: right bottom;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-}
-.nav-link {
-    /* Estilo básico para os links */
-    color: white; /* ou outra cor de base para os links */
-    background: transparent;
-    -webkit-text-fill-color: white; /* Cor do texto para navegadores WebKit */
-    text-decoration: none; /* opcional, remove o sublinhado dos links */
-}
-
-.nav-link:hover {
-    /* Estilo para o hover */
-    background: linear-gradient( #42ff1c, #40c9ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent; /* Torna o texto transparente para navegadores WebKit */
-    color: transparent; /* Torna o texto transparente */
-}
-
-.gradient-icon {
-    color: white; /* ou outra cor base */
-}
-
-.gradient-icon:hover {
-    background: linear-gradient(145deg,#42ff1c, #40c9ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-.center-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-
-.card-perfil {
-  padding: 20px;
-  color: white;
-  background: linear-gradient(#212121, #212121) padding-box,
-              linear-gradient(145deg, transparent 35%,#42ff1c, #40c9ff) border-box;
-  border: 4px solid transparent;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  transform-origin: right bottom;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-.card-perfil:hover {
-  rotate: 8deg;
-}
-     
-    </style>
 </head>
 <main class="bg-dark text-white">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -122,6 +26,14 @@
             </div>
         </div>
     </nav>
+    <div class="fixed-bottom text-end mb-3 me-3">
+        <a href="docs/Fernando-FullStack.pdf" class="btn btn-custom" download="Fernando_Montanari_Aurelio_Resume">
+            <i class="fas fa-download"></i> Download Currículo PDF
+        </a>
+    </div>
+    
+    
+    
     <header class="text-center">
         <h1 class="efeito-nome">Fernando Montanari Aurelio</h1>
         <p>Programador Fullstack</p>
@@ -194,7 +106,7 @@
                         <!-- Adicione ícones adicionais conforme necessário -->
                     </ul>
                     <br>
-                    <div class="card1 mt-3 neon-effect2">
+                    <div class="card1 mt-3">
                         <div class="card-body">
                             <ul class="list-unstyled">
                                 <li><i class="fas fa-check me-2 text-success"></i> Desenvolvimento com Angular</li>
@@ -223,7 +135,7 @@
             <h2 class="text-center efeito-nome mb-5 ">Projetos Destacados</h2><br>
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-5">
-                    <div class="card1 h-100 neon-effect2">
+                    <div class="card1 h-100 ">
                         <img src="img/layout-3.png" class="card-img-top" alt="Lab School Manager" style="max-height: 200px;">
                         <div class="card-body">
                             <h3 class="card-title">Lab School Manager</h3>
@@ -237,7 +149,7 @@
                     </div>
                 </div> 
                 <div class="col-lg-4 col-md-6 mb-5">
-                    <div class="card1  h-100 neon-effect2" style="position: relative;">
+                    <div class="card1  h-100 " style="position: relative;">
                         <img src="img/hms-portifolio.png" class="card-img-top" alt="Health Mais Saúde" style="max-height: 200px;">
                         <div class="card-body d-flex flex-column">
                             <div>
@@ -250,7 +162,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-5">
-                    <div class="card1 h-100 neon-effect2" style="position: relative;">
+                    <div class="card1 h-100 " style="position: relative;">
                         <img src="img/BandaPAraFestas.png" class="card-img-top" alt="Health Mais Saúde" style="max-height: 200px;">
                         <div class="card-body">
                             <div>
@@ -263,7 +175,7 @@
                     </div>
                 </div>
                     <div class="col-lg-4 col-md-6 mb-5">
-                        <div class="card1 h-100 neon-effect2" style="position: relative;">
+                        <div class="card1 h-100 " style="position: relative;">
                             <img src="img/conectaRV.png" class="card-img-top" alt="Health Mais Saúde" style="max-height: 200px;">
                             <div class="card-body">
                                 <div>
@@ -276,7 +188,7 @@
                         </div>
                     </div>
                 <div class="col-lg-4 col-md-6 mb-5">
-                    <div class="card1 h-100 neon-effect2" style="position: relative;">
+                    <div class="card1 h-100 " style="position: relative;">
                         <img src="img/perfil-git.png" class="card-img-top" alt="Nome do Terceiro Projeto" style="max-height: 200px;">
                         <div class="card-body">
                             <div>
@@ -289,7 +201,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-5">
-                    <div class="card1 h-100 neon-effect2" style="position: relative;">
+                    <div class="card1 h-100" style="position: relative;">
                         <!-- Substitua 'videoID' pelo ID do vídeo do YouTube -->
                         <iframe width="100%" height="200" src="https://www.youtube.com/embed/k7Q7dnKbrD4?si=z_sUvu7kcqY_l9Gf" frameborder="0" allowfullscreen></iframe>
                         <div class="card-body">
@@ -327,7 +239,7 @@
     </footer>
     
 </main>
-    <script src="//code.tidio.co/qjsekkwo8lq50qrrskmocjhwgnuqzcab.js" async></script>
+    <!-- <script src="//code.tidio.co/qjsekkwo8lq50qrrskmocjhwgnuqzcab.js" async></script> -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
