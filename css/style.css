@@ -124,3 +124,103 @@ color: white; /* Ajuste a cor do texto conforme necessário */
 background: linear-gradient(45deg, #3ce817, #36b4e8);
 color: white; /* Ajuste a cor do texto conforme necessário */
 }
+
+
+.cube-container {
+    display: flex; /* Usa flexbox para alinhamento */
+    flex-direction: column; /* Itens empilhados verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    height: 800px; /* Altura total do contêiner */
+    position: relative;
+    margin: 0 auto;
+}
+
+.cube {
+    position: absolute; /* Posicionamento absoluto */
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: rotate 8s infinite linear;
+    z-index: 0; /* Coloca o cubo atrás da imagem */
+}
+
+img.img-fluid2 {
+    position: absolute; /* Posicionamento absoluto */
+    height: 600px;
+    width: auto;
+    z-index: 1; /* Mantém a imagem na frente do cubo */
+}
+
+  
+  .face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    color:  #42ff1c;
+    font-size: 18px;
+    text-align: center;
+    line-height: 200px;
+    background: transparent;
+    opacity: 0.9;
+    border: 2px solid;
+    border-image: linear-gradient(to right, #3fdf0f,  #159bc4, #557d35, #cfcf16, #159bc4) 1;
+    box-shadow: 0 0 100px  #42ff1c;
+  }
+  
+  .front {
+    transform: translateZ(100px);
+  }
+  
+  .back {
+    transform: rotateY(180deg) translateZ(100px);
+  }
+  
+  .right {
+    transform: rotateY(90deg) translateZ(100px);
+  }
+  
+  .left {
+    transform: rotateY(-90deg) translateZ(100px);
+  }
+  
+  .top {
+    transform: rotateX(90deg) translateZ(100px);
+  }
+  
+  .bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+  }
+  
+  .cube-container:hover .cube {
+    animation-play-state: paused;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+  
+    100% {
+      transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+  }
+  
+
+/* Diminui a margem inferior da linha de ícones */
+.row.icons {
+    margin-bottom: -150px; /* Reduz a margem para 0 ou qualquer outro valor desejado */
+}
+
+/* Diminui o padding superior da linha com as colunas */
+.row.align-items-center {
+    padding-top: 0; /* Reduz o padding para 0 ou qualquer outro valor desejado */
+}
+
+.mt-3 {
+    margin-top: 0 !important; /* Sobrescreve o margin-top padrão da classe 'mt-3' do Bootstrap */
+}
+
+#projects {
+    margin-top: -100px; /* Reduz o padding-top para 2rem ou o valor desejado */
+}
