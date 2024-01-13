@@ -59,9 +59,12 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="center-content">
-                        <img src="img/fotoperfil.png" class="card-perfil img-fluid" alt="Fernando Montanari Aurélio" style="max-width: 250px; max-height: 250px; width: 100%; height: auto; object-fit: cover; margin-bottom: 20px;">
+                        <div class="card1 my-4">
+                            <img src="img/fotoperfil.png" alt="Fernando Montanari Aurélio" class="card1-image">
+                            
+                        </div>
                         <h5>Fernando Montanari Aurélio</h5>
-                        <p><i class="fas fa-map-marker-alt"></i> Florianópolis – SC</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Florianópolis – SC</p>
                     </div>
                 </div>
                 
@@ -166,90 +169,79 @@
         </div>
     </section>
 
-    <section id="projects" class="py-4 bg-dark ">
+    <section id="projects" class="py-4 bg-dark">
         <div class="container">
-            <h2 class="text-center efeito-nome mb-5 ">Projetos Destacados</h2><br>
+            <h2 class="text-center efeito-nome mb-5">Projetos Destacados</h2>
             <div class="row">
+                <!-- Card 1: Lab School Manager -->
                 <div class="col-lg-4 col-md-6 mb-5">
-                    <div class="card1 h-100 ">
-                        <img src="img/layout-3.png" class="card-img-top" alt="Lab School Manager" style="max-height: 200px;">
+                    <div class="card1 h-100">
+                        <img src="img/layout-3.png" class="card-img-top" alt="Lab School Manager">
                         <div class="card-body">
                             <h3 class="card-title">Lab School Manager</h3>
-                            <div>
-                                <a href="https://github.com/FeReDragon/App-LabSchool-Manager" target="_blank">Acesse Repositorio Frontend</a>
-                            </div>
-                            <div>
-                                <a href="https://github.com/FeReDragon/LabSchool-Manager-API" target="_blank">Acesse Repositorio Backend</a>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-                <div class="col-lg-4 col-md-6 mb-5">
-                    <div class="card1  h-100 " style="position: relative;">
-                        <img src="img/hms-portifolio.png" class="card-img-top" alt="Health Mais Saúde" style="max-height: 200px;">
-                        <div class="card-body d-flex flex-column">
-                            <div>
-                                <h3 class="card-title">Health Mais Saúde</h3>
-                            </div>
-                            <div>
-                                <a href="https://hms-deploy-ang.azurewebsites.net" class="mt-auto" style="position: absolute; bottom: 20px;" target="_blank">Acesse o Deploy (em fase de Testes!)</a>
-                            </div>
+                            <a href="https://github.com/FeReDragon/App-LabSchool-Manager" target="_blank" class="card-link">Acesse Repositorio Frontend</a>
+                            <a href="https://github.com/FeReDragon/LabSchool-Manager-API" target="_blank" class="card-link">Acesse Repositorio Backend</a>
                         </div>
                     </div>
                 </div>
+    
+                <!-- Card 2: Health Mais Saúde -->
                 <div class="col-lg-4 col-md-6 mb-5">
-                    <div class="card1 h-100 " style="position: relative;">
-                        <img src="img/BandaPAraFestas.png" class="card-img-top" alt="Health Mais Saúde" style="max-height: 200px;">
+                    <div class="card1 h-100">
+                        <img src="img/hms-portifolio.png" class="card-img-top" alt="Health Mais Saúde">
                         <div class="card-body">
-                            <div>
-                                <h3 class="card-title">Web Site Banda Para Festas</h3>
-                            </div>
-                            <div>
-                                <a href="https://www.bandaparafestas.com.br" class="mt-auto" style="position: absolute; bottom: 20px;"  target="_blank">Visite o Site da Banda</a>
-                            </div>
+                            <h3 class="card-title">Health Mais Saúde</h3>
+                            <a href="https://hms-deploy-ang.azurewebsites.net" target="_blank" class="card-link">Acesse o Deploy (em fase de Testes!)</a>
                         </div>
                     </div>
                 </div>
-                    <div class="col-lg-4 col-md-6 mb-5">
-                        <div class="card1 h-100 " style="position: relative;">
-                            <img src="img/conectaRV.png" class="card-img-top" alt="Health Mais Saúde" style="max-height: 200px;">
-                            <div class="card-body">
-                                <div>
-                                    <h3 class="card-title">App Conecta Rio Vermelho</h3>
-                                </div>
-                                <div>
-                                    <a href="#" class="mt-auto" style="position: absolute; bottom: 20px;"  target="_blank">Em Desenvolvimento!</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    
+                <!-- Card 3: Web Site Banda Para Festas -->
                 <div class="col-lg-4 col-md-6 mb-5">
-                    <div class="card1 h-100 " style="position: relative;">
-                        <img src="img/perfil-git.png" class="card-img-top" alt="Nome do Terceiro Projeto" style="max-height: 200px;">
+                    <div class="card1 h-100">
+                        <img src="img/BandaPAraFestas.png" class="card-img-top" alt="Web Site Banda Para Festas">
                         <div class="card-body">
-                            <div>
-                                <h3 class="card-title">Acesse Os Repositorios no GitHub</h3>
-                            </div>
-                            <div>
-                                <a href="https://github.com/FeReDragon"  target="_blank">Acesse o Repositorio </a>
-                            </div>
+                            <h3 class="card-title">Web Site Banda Para Festas</h3>
+                            <a href="https://www.bandaparafestas.com.br" target="_blank" class="card-link">Visite o Site da Banda</a>
                         </div>
                     </div>
                 </div>
+    
+                <!-- Card 4: App Conecta Rio Vermelho -->
                 <div class="col-lg-4 col-md-6 mb-5">
-                    <div class="card1 h-100" style="position: relative;">
-                        <!-- Substitua 'videoID' pelo ID do vídeo do YouTube -->
+                    <div class="card1 h-100">
+                        <img src="img/conectaRV.png" class="card-img-top" alt="App Conecta Rio Vermelho">
+                        <div class="card-body">
+                            <h3 class="card-title">App Conecta Rio Vermelho</h3>
+                            <a href="#" target="_blank" class="card-link">Em Desenvolvimento!</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Card 5: Acesse Os Repositorios no GitHub -->
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <div class="card1 h-100">
+                        <img src="img/perfil-git.png" class="card-img-top" alt="Acesse Os Repositorios no GitHub">
+                        <div class="card-body">
+                            <h3 class="card-title">Acesse Os Repositorios no GitHub</h3>
+                            <a href="https://github.com/FeReDragon" target="_blank" class="card-link">Acesse o Repositorio</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Card 6: Video Health Mais Saude -->
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <div class="card1 h-100">
                         <iframe width="100%" height="200" src="https://www.youtube.com/embed/k7Q7dnKbrD4?si=z_sUvu7kcqY_l9Gf" frameborder="0" allowfullscreen></iframe>
                         <div class="card-body">
-                            <div>
-                                <h3 class="card-title">Video Health Mais Saude</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            <h3 class="card-title">Video Health Mais Saude</h3>
+                                        </div>
             </div>
         </div>
-    </section>    
+    </div>
+</div>
+
+</section>
 
 
 
