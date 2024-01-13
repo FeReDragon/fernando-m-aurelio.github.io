@@ -192,9 +192,6 @@ img.img-fluid2 {
     transform: rotateX(-90deg) translateZ(100px);
   }
   
-  .cube-container:hover .cube {
-    animation-play-state: paused;
-  }
   
   @keyframes rotate {
     0% {
