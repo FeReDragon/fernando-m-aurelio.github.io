@@ -23,7 +23,16 @@ flex-direction: column;
 cursor: pointer;
 transform-origin: right bottom;
 transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+box-shadow: 0 0 25px  #4fcf64bb;
 }
+
+.card1-image {
+  max-width: 200px;
+  max-height: 200px; /* Garante que a imagem não exceda o tamanho do card */
+  border-radius: 4px; /* Arredonda os cantos da imagem */
+  object-fit: cover; /* Garante que a imagem cubra o espaço disponível */
+}
+
 .nav-link {
     /* Estilo básico para os links */
     color: white; /* ou outra cor de base para os links */
@@ -101,6 +110,7 @@ rotate: 8deg;
 background: linear-gradient(45deg, #42ff1c, #40c9ff);
 border: none;
 color: white; /* Ajuste a cor do texto conforme necessário */
+box-shadow: 0 0 10px  #4fcf64bb;
 }
 
 /* Opcional: Estilize o estado hover do botão */
