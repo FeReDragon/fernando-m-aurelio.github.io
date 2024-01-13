@@ -3,22 +3,6 @@ a { color: #0d6efd; }
 a:hover { color: #0b5ed7; }
 .bg-dark { background-color: #121212; }
 
-.neon-effect {
-box-shadow: rgba(41, 163, 41, 0.4) -5px 5px, 
-    rgba(41, 163, 41, 0.3) -10px 10px, 
-    rgba(41, 163, 41, 0.2) -15px 15px, 
-    rgba(41, 163, 41, 0.1) -20px 20px, 
-    rgba(41, 163, 41, 0.05) -25px 25px;
-border-radius:  50px; 
-}
-.neon-effect2 {
-box-shadow: rgba(41, 163, 41, 0.4) -5px 5px, 
-    rgba(41, 163, 41, 0.3) -10px 10px, 
-    rgba(41, 163, 41, 0.2) -15px 15px, 
-    rgba(41, 163, 41, 0.1) -20px 20px, 
-    rgba(41, 163, 41, 0.05) -25px 25px;
-border-radius: 5px; /* Mantém o efeito circular para uma imagem redonda */
-}
 .efeito-nome {
 background: linear-gradient(45deg,#42ff1c, #40c9ff);
 -webkit-background-clip: text;
@@ -165,7 +149,7 @@ img.img-fluid2 {
     opacity: 0.9;
     border: 2px solid;
     border-image: linear-gradient(to right, #3fdf0f,  #159bc4, #557d35, #cfcf16, #159bc4) 1;
-    box-shadow: 0 0 100px  #42ff1c;
+    box-shadow: 0 0 100px  #4fcf64bb;
   }
   
   .front {
