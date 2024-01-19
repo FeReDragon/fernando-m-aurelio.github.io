@@ -1,104 +1,30 @@
-body { background-color: #121212; color: white; }
-a { color: #0d6efd; }
-a:hover { color: #0b5ed7; }
-.bg-dark { background-color: #121212; }
+/* Estilos Básicos */
+body {
+  background-color: #121212;
+  color: white;
+}
 
+a {
+  color: #0d6efd;
+}
+
+a:hover {
+  color: #0b5ed7;
+}
+
+.bg-dark {
+  background-color: #121212;
+}
+
+/* Efeito de nome com gradiente */
 .efeito-nome {
-background: linear-gradient(45deg,#42ff1c, #40c9ff);
--webkit-background-clip: text;
-color: transparent;
-background-clip: text;
+  background: linear-gradient(45deg, #42ff1c, #40c9ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
 }
 
-.card1 {
-
-padding: 10px;
-color: white;
-background: linear-gradient(#212121, #212121) padding-box,
-      linear-gradient(145deg, transparent 35%,#42ff1c, #40c9ff) border-box;
-border: 4px solid transparent;
-border-radius: 8px;
-display: flex;
-flex-direction: column;
-cursor: pointer;
-transform-origin: right bottom;
-transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-box-shadow: 0 0 25px  #4fcf64bb;
-}
-
-.card1-image {
-  max-width: 200px;
-  max-height: 200px; /* Garante que a imagem não exceda o tamanho do card */
-  border-radius: 4px; /* Arredonda os cantos da imagem */
-  object-fit: cover; /* Garante que a imagem cubra o espaço disponível */
-}
-
-.nav-link {
-    /* Estilo básico para os links */
-    color: white; /* ou outra cor de base para os links */
-    background: transparent;
-    -webkit-text-fill-color: white; /* Cor do texto para navegadores WebKit */
-    text-decoration: none; /* opcional, remove o sublinhado dos links */
-    position: relative; /* Necessário para posicionar o pseudo-elemento */
-    z-index: 1; /* Para garantir que o texto fique acima do pseudo-elemento */
-}
-
-.nav-link:hover {
-    /* Estilo para o hover */
-    background: linear-gradient(145deg, #42ff1c, #40c9ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent; /* Torna o texto transparente para navegadores WebKit */
-    color: transparent; /* Torna o texto transparente */
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    top: 100%; /* Posicionado logo abaixo do link */
-    left: 0;
-    width: 100%;
-    height: 3px; /* Altura da "sombra" */
-    background: linear-gradient(145deg, #42ff1c, #40c9ff);
-    opacity: 0; /* Inicialmente invisível */
-    transition: opacity .3s ease;
-    z-index: -1; /* Coloca a "sombra" atrás do texto */
-}
-
-.nav-link:hover::after {
-    opacity: 1; /* Torna a "sombra" visível no hover */
-}
-
-
-.gradient-icon {
-color: white; /* ou outra cor base */
-}
-
-.gradient-icon:hover {
-background: linear-gradient(145deg,#42ff1c, #40c9ff);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
-}
-.center-content {
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
+/* Card personalizado */
 .card1 {
   padding: 10px;
   color: white;
@@ -111,8 +37,9 @@ flex-direction: column;
   cursor: pointer;
   transform-origin: right bottom;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-  background-size: 200% 200%; /* Aumenta o tamanho do gradiente para a animação */
-  animation: gradientAnimation 8s ease infinite; /* Aplica a animação */
+  background-size: 200% 200%;
+  animation: gradientAnimation 8s ease infinite;
+  box-shadow: 0 0 25px #4fcf64bb;
 }
 
 .card1:hover {
@@ -120,138 +47,206 @@ flex-direction: column;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.card-img-top {
-  height: 200px; /* Altura fixa para todas as imagens */
+/* Estilo de imagem em card */
+.card1-image {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 4px;
   object-fit: cover;
 }
 
-.card-body {
-  text-align: center; /* Centraliza o conteúdo */
+/* Estilos para nav-link */
+.nav-link {
+  color: white;
+  background: transparent;
+  -webkit-text-fill-color: white;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
 }
 
-.card-title {
-  margin-bottom: 10px;
+.nav-link:hover {
+  background: linear-gradient(145deg, #42ff1c, #40c9ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
-.card-link {
-  display: block;
-  margin-bottom: 5px;
+.nav-link::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(145deg, #42ff1c, #40c9ff);
+  opacity: 0;
+  transition: opacity .3s ease;
+  z-index: -1;
+}
+
+.nav-link:hover::after {
+  opacity: 1;
+}
+
+/* Estilos para ícones com gradiente */
+.gradient-icon {
+  color: white;
+}
+
+.gradient-icon:hover {
+  background: linear-gradient(145deg, #42ff1c, #40c9ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Centraliza conteúdo */
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Animação de gradiente */
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+/* Estilos para botão personalizado */
+.btn-custom {
+  background: linear-gradient(45deg, #42ff1c, #40c9ff);
+  border: none;
+  color: white;
+  box-shadow: 0 0 10px #4fcf64bb;
+}
+
+.btn-custom:hover {
+  background: linear-gradient(45deg, #3ce817, #36b4e8);
+  color: white;
+}
+
+.cube-container {
+  display: flex; /* Usa flexbox para alinhamento */
+  flex-direction: column; /* Itens empilhados verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  height: 800px; /* Altura total do contêiner */
+  position: relative;
+  margin: 0 auto;
+}
+
+.cube {
+  position: absolute; /* Posicionamento absoluto */
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: rotate 8s infinite linear;
+  z-index: 0; /* Coloca o cubo atrás da imagem */
+}
+
+img.img-fluid2 {
+  position: absolute; /* Posicionamento absoluto */
+  height: 600px;
+  width: auto;
+  z-index: 1; /* Mantém a imagem na frente do cubo */
+}
+
+.face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
   color: #42ff1c;
+  font-size: 18px;
+  text-align: center;
+  line-height: 200px;
+  background: transparent;
+  opacity: 0.9;
+  border: 2px solid;
+  border-image: linear-gradient(to right, #3fdf0f, #159bc4, #557d35, #cfcf16, #159bc4) 1;
+  box-shadow: 0 0 100px #4fcf64bb;
 }
 
+/* Posicionamento das faces do cubo */
+.front {
+  transform: translateZ(100px);
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(100px);
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+@keyframes rotate {
+  0% {
+      transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+  100% {
+      transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+/* Ajustes de responsividade */
 @media (max-width: 768px) {
   .card-img-top {
       height: 150px;
   }
 }
 
-
-.btn-custom {
-background: linear-gradient(45deg, #42ff1c, #40c9ff);
-border: none;
-color: white; /* Ajuste a cor do texto conforme necessário */
-box-shadow: 0 0 10px  #4fcf64bb;
-}
-
-/* Opcional: Estilize o estado hover do botão */
-.btn-custom:hover {
-background: linear-gradient(45deg, #3ce817, #36b4e8);
-color: white; /* Ajuste a cor do texto conforme necessário */
-}
-
-
-.cube-container {
-    display: flex; /* Usa flexbox para alinhamento */
-    flex-direction: column; /* Itens empilhados verticalmente */
-    align-items: center; /* Centraliza horizontalmente */
-    justify-content: center; /* Centraliza verticalmente */
-    height: 800px; /* Altura total do contêiner */
-    position: relative;
-    margin: 0 auto;
-}
-
-.cube {
-    position: absolute; /* Posicionamento absoluto */
-    width: 200px;
-    height: 200px;
-    transform-style: preserve-3d;
-    animation: rotate 8s infinite linear;
-    z-index: 0; /* Coloca o cubo atrás da imagem */
-}
-
-img.img-fluid2 {
-    position: absolute; /* Posicionamento absoluto */
-    height: 600px;
-    width: auto;
-    z-index: 1; /* Mantém a imagem na frente do cubo */
-}
-
-  
-  .face {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    color:  #42ff1c;
-    font-size: 18px;
-    text-align: center;
-    line-height: 200px;
-    background: transparent;
-    opacity: 0.9;
-    border: 2px solid;
-    border-image: linear-gradient(to right, #3fdf0f,  #159bc4, #557d35, #cfcf16, #159bc4) 1;
-    box-shadow: 0 0 100px  #4fcf64bb;
-  }
-  
-  .front {
-    transform: translateZ(100px);
-  }
-  
-  .back {
-    transform: rotateY(180deg) translateZ(100px);
-  }
-  
-  .right {
-    transform: rotateY(90deg) translateZ(100px);
-  }
-  
-  .left {
-    transform: rotateY(-90deg) translateZ(100px);
-  }
-  
-  .top {
-    transform: rotateX(90deg) translateZ(100px);
-  }
-  
-  .bottom {
-    transform: rotateX(-90deg) translateZ(100px);
-  }
-  
-  
-  @keyframes rotate {
-    0% {
-      transform: rotateX(0) rotateY(0) rotateZ(0);
-    }
-  
-    100% {
-      transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
-    }
-  }
-  
-
-/* Diminui a margem inferior da linha de ícones */
+/* Ajustes específicos de layout */
 .row.icons {
-    margin-bottom: -150px; /* Reduz a margem para 0 ou qualquer outro valor desejado */
+  margin-bottom: -150px;
 }
 
-/* Diminui o padding superior da linha com as colunas */
 .row.align-items-center {
-    padding-top: 0; /* Reduz o padding para 0 ou qualquer outro valor desejado */
+  padding-top: 0;
 }
 
 .mt-3 {
-    margin-top: 0 !important; /* Sobrescreve o margin-top padrão da classe 'mt-3' do Bootstrap */
+  margin-top: 0 !important;
 }
 
 #projects {
-    margin-top: -100px; /* Reduz o padding-top para 2rem ou o valor desejado */
+  margin-top: -150px;
 }
+
+#skills {
+  background-image: 
+      linear-gradient(
+          to bottom, 
+          rgba(0, 0, 0, 0) 0%, 
+          rgba(0, 0, 0, 0.5) 25%, 
+          rgba(0, 0, 0, 0.5) 75%, 
+          rgba(0, 0, 0, 0) 100%
+      ),
+      url('https://optiver.com/wp-content/uploads/2022/10/AdobeStock_457358220-scaled.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
