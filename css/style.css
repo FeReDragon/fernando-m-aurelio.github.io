@@ -40,6 +40,7 @@ a:hover {
   background-size: 200% 200%;
   animation: gradientAnimation 8s ease infinite;
   box-shadow: 0 0 25px #4fcf64bb;
+  justify-content: space-between; /* Alinhamento interno */
 }
 
 .card1:hover {
@@ -48,12 +49,19 @@ a:hover {
 }
 
 /* Estilo de imagem em card */
-.card1-image {
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.card2-image {
   max-width: 200px;
   max-height: 200px;
   border-radius: 4px;
   object-fit: cover;
 }
+
 
 /* Estilos para nav-link */
 .nav-link {
@@ -249,4 +257,22 @@ img.img-fluid2 {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+.justified-text {
+  text-align: justify;
+}
+
+/* Custom styles for the accordion */
+
+/* Cor de fundo para o corpo do acordeão */
+.accordion-body {
+  background-color: #212529; /* Cor de fundo para o corpo do acordeão */
+  color: #ffffff; /* Cor do texto para o corpo do acordeão */
+}
+
+/* Cor de borda para os itens do acordeão */
+.accordion-item {
+  border: 1px solid #2c3034; /* Cor da borda dos itens do acordeão */
+}
+
 
