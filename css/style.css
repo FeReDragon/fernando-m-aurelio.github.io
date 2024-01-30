@@ -270,9 +270,4 @@ img.img-fluid2 {
   color: #ffffff; /* Cor do texto para o corpo do acordeão */
 }
 
-/* Cor de borda para os itens do acordeão */
-.accordion-item {
-  border: 1px solid #2c3034; /* Cor da borda dos itens do acordeão */
-}
-
 
