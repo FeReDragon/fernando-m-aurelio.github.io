@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!-- Fonte do docs/Fernando-FullStack.pdf. Para gerar o PDF:
+     google-chrome --headless --no-pdf-header-footer --print-to-pdf=docs/Fernando-FullStack.pdf docs/curriculo.html -->
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Fernando Montanari Aurélio - Currículo</title>
+<style>
+    @page { size: A4; margin: 22mm 18mm 18mm 18mm; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DejaVu Sans', sans-serif; font-size: 10.5pt; color: #000; line-height: 1.75; }
+    a { color: inherit; }
+    h1 { font-size: 17pt; font-weight: bold; letter-spacing: 0.02em; line-height: 1.4; margin-bottom: 2pt; }
+    h2 { font-size: 14pt; font-weight: bold; letter-spacing: 0.02em; margin: 15pt 0 6pt; line-height: 1.4; break-after: avoid; }
+    .contact p { font-size: 10pt; line-height: 1.95; }
+    .contact .portfolio { color: #3b6e8f; text-decoration: underline; }
+    .contact .mail { text-decoration: underline; }
+    .justify { text-align: justify; }
+
+    /* Formação: três colunas */
+    .edu { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14pt; padding-left: 6pt; line-height: 1.35; }
+    .edu .t { font-size: 11pt; margin-bottom: 3pt; }
+    .edu .s { font-size: 8.5pt; }
+
+    /* Competências */
+    .group { margin: 10pt 0 4pt 22pt; font-weight: bold; break-after: avoid; }
+    .group::before { content: '➔'; margin-right: 8pt; }
+    .sub { margin: 6pt 0 2pt 22pt; font-size: 10.5pt; break-after: avoid; }
+    ul.dots { list-style: none; margin-left: 32pt; line-height: 1.6; }
+    ul.dots li { position: relative; padding-left: 13pt; text-align: justify; break-inside: avoid; }
+    ul.dots li::before { content: '•'; position: absolute; left: 0; font-size: 8pt; top: 1pt; }
+
+    /* Experiência */
+    .job { margin-top: 10pt; }
+    .date { break-before: avoid; }
+    .job p { text-align: justify; }
+    .job .arrow { font-weight: bold; margin-right: 14pt; }
+    .job strong { letter-spacing: 0.02em; }
+    .date { font-family: 'Liberation Sans', Arial, sans-serif; font-weight: bold; font-style: italic; font-size: 8.5pt; margin: 4pt 0 0 6pt; }
+
+    /* Certificações: duas colunas */
+    .certs { columns: 2; column-gap: 24pt; padding-left: 6pt; line-height: 1.35; }
+    .cert { break-inside: avoid; margin-bottom: 9pt; }
+    .cert .t { font-size: 10.5pt; }
+    .cert .o { font-size: 9pt; }
+    .cert .d { font-size: 8pt; }
+</style>
+</head>
+<body>
+    <header class="contact">
+        <h1>Fernando Montanari Aurélio</h1>
+        <p>Florianópolis, SC</p>
+        <p>Telefone: (48) 991-715-395 E-mail: <a class="mail" href="mailto:f3030ma@gmail.com">f3030ma@gmail.com</a></p>
+        <p>LinkedIn: www.linkedin.com/in/fernando-montanari-aurélio-a12235254</p>
+        <p>GitHub: https://github.com/FeReDragon</p>
+        <p>Portfólio: <a class="portfolio" href="https://feredragon.github.io/fernando-m-aurelio.github.io">https://feredragon.github.io/fernando-m-aurelio.github.io</a></p>
+    </header>
+
+    <h2 style="margin-top: 26pt">Resumo do Perfil</h2>
+    <p class="justify">
+        Engenheiro de dados e desenvolvedor full stack, com experiência em pipelines de dados em produção no Google Cloud
+        (BigQuery, Cloud Composer/Airflow, dbt e Kafka) e no desenvolvimento de aplicações com Spring Boot e Angular.
+        Atuo de ponta a ponta: da ingestão e modelagem dos dados em arquitetura medallion até a entrega em painéis de BI,
+        APIs e relatórios automatizados. Busco desafios em que possa unir engenharia de dados e desenvolvimento de software,
+        com foco em qualidade, confiabilidade e aprendizado contínuo.
+    </p>
+
+    <h2>Formação Acadêmica</h2>
+    <div class="edu">
+        <div><p class="t">Gestão em TI</p><p class="s">Graduação - UNIASSELVI<br>Janeiro 2022 – Julho 2024</p></div>
+        <div><p class="t">Formação FullStack</p><p class="s">Tec Profissionalizante - SENAI-SC<br>Janeiro 2023 – Novembro 2023</p></div>
+        <div><p class="t">Enfermagem</p><p class="s">Bacharelado - UNILASALLE<br>Canoas-RS Turma 2011/1</p></div>
+    </div>
+
+    <h2>Competências</h2>
+    <p class="group">Soft Skills:</p>
+    <ul class="dots">
+        <li>Colaborativo e trabalho em equipe.</li>
+        <li>Proatividade e iniciativa na resolução de problemas.</li>
+        <li>Capacidade autodidata e de aprendizado contínuo.</li>
+        <li>Organização eficaz e gerenciamento de tempo.</li>
+        <li>Pontualidade e Responsabilidade.</li>
+    </ul>
+
+    <p class="group" style="margin-top: 14pt">Hard Skills:</p>
+    <p class="sub">Engenharia de Dados:</p>
+    <ul class="dots">
+        <li>Google Cloud Platform: BigQuery, Cloud Composer e Cloud Run; Vertex AI (em início).</li>
+        <li>Apache Airflow: DAGs em produção, TaskGroups, TriggerDagRunOperator e diagnóstico de performance e falhas.</li>
+        <li>dbt: Modelagem das camadas silver e gold, cargas incrementais com MERGE e backfills.</li>
+        <li>Kafka: Pipelines de captura de dados integrados ao Airflow.</li>
+        <li>Arquitetura Medallion: Data warehouse em camadas raw → silver → gold.</li>
+        <li>Python: Operadores, upserts e validações em pipelines.</li>
+        <li>Pimcore: MDM e normalização de dados.</li>
+    </ul>
+    <p class="sub">Bancos de Dados:</p>
+    <ul class="dots">
+        <li>PostgreSQL, Oracle (SQL*Plus e views), SQL Server e Supabase.</li>
+        <li>SQL: Consultas analíticas e conversão entre dialetos (BigQuery → Oracle).</li>
+    </ul>
+    <p class="sub">Back-End:</p>
+    <ul class="dots">
+        <li>Java/Spring Boot: APIs REST e projetos JHipster.</li>
+        <li>Node.js e C#/.NET: APIs REST, Entity Framework Core, LINQ e Migrations.</li>
+        <li>Jinja: Templates para relatórios automatizados.</li>
+    </ul>
+    <p class="sub">Front-End:</p>
+    <ul class="dots">
+        <li>Angular e React com TypeScript: Componentes, Services, Rotas, Requisições HTTP, Reactive Forms e TanStack Query.</li>
+        <li>HTML5, CSS3 e Bootstrap: Tags semânticas, Flexbox e layouts responsivos.</li>
+    </ul>
+    <p class="sub">BI e Analytics:</p>
+    <ul class="dots">
+        <li>Power BI Embedded: Service Principal, Row-Level Security multi-tenant e leitura de regras em DAX.</li>
+        <li>Cube.js: Camada semântica e otimização de pré-agregações.</li>
+    </ul>
+    <p class="sub">Infraestrutura e DevOps:</p>
+    <ul class="dots">
+        <li>Docker, CI/CD e Terraform (infraestrutura como código).</li>
+        <li>Linux/WSL, segurança web (CSP, HSTS e cabeçalhos HTTP) e SendGrid (entregabilidade de e-mails).</li>
+    </ul>
+    <p class="sub">IA e Produtividade:</p>
+    <ul class="dots">
+        <li>Claude Code (CLAUDE.md, agentes e plugins de memória) e Spec-Driven Development.</li>
+    </ul>
+    <p class="sub">Gestão de Código e Metodologias Ágeis:</p>
+    <ul class="dots">
+        <li>GIT/Github: Versionamento de código, Branches, Pull Requests e Code Review.</li>
+        <li>SCRUM e Kanban: Prática em desenvolvimento ágil e trabalho em equipe.</li>
+    </ul>
+
+    <h2>Experiência</h2>
+    <div class="job">
+        <p><span class="arrow">➔</span><strong>Engenheiro de Dados e Desenvolvedor Full Stack, H:DATA -</strong>
+        Desenvolvimento e sustentação de um data warehouse em arquitetura medallion (raw → silver → gold) no BigQuery,
+        com DAGs do Apache Airflow em produção no Cloud Composer, modelos dbt nas camadas silver e gold, backfills e
+        pipelines de captura com Kafka. Diagnóstico e correção de falhas de performance, memória e cotas nos pipelines.
+        Integração com bancos Oracle, PostgreSQL e SQL Server, incluindo conversão de SQL entre dialetos. Entrega de dados
+        com Power BI Embedded (Service Principal e Row-Level Security multi-tenant) e Cube.js, com otimização de
+        pré-agregações. Desenvolvimento de aplicações com Spring Boot (JHipster) e Angular, relatórios automatizados com
+        templates Jinja e envio de e-mails com SendGrid. Infraestrutura como código com Terraform, Docker e CI/CD.</p>
+        <p class="date">Fevereiro 2024 – Presente</p>
+    </div>
+    <div class="job">
+        <p><span class="arrow">➔</span><strong>Full Stack Web App, Lab School Manager -</strong>
+        Front-end desenvolvido com Angular, Bootstrap e CSS personalizado, para o sistema de gestão educacional, no qual
+        professores e pedagogos são os usuários finais. Layout com dashboard de cards dinamicos e gráfico com Chart.js.
+        Principais funcionalidades: Cadastro, edição, exclusão e consulta de alunos, professores, pedagogos, exercícios,
+        avaliações e atendimentos pedagógicos. Restrições de funcionalidades para cada classe de usuário logado,
+        autenticação de usuários por Token JWT, consumo da API ViaCEP para cadastro de endereços e validação dos campos de
+        todos os formulários. 100% Responsivo. API REST desenvolvida com C# .NET, EntityFramework para ORM, AutoMapper,
+        Swagger para documentação e SQL Server, com as tabelas criadas por Code First. Data Validations para todas as
+        classes. Segui boas práticas de Clean Code e arquitetura SOLID.</p>
+        <p class="date">Julho 2023 – Novembro 2023</p>
+    </div>
+    <div class="job">
+        <p><span class="arrow">➔</span><strong>Full Stack Web App, Health Mais Saúde -</strong>
+        Monitoramento de indicadores de saúde através de gráficos interativos e intuitivos, utilizando a biblioteca
+        Chart.js. Desenvolvimento de dashboards personalizados com Bootstrap e CSS personalizado que oferecem visualizações
+        em tempo real de métricas como frequência cardíaca, níveis de glicose, pressão arterial e atividade física,
+        permitindo aos usuários acompanhar progressos e detectar tendências em seus dados de saúde. Conta com sistema de
+        autenticação de login por Token JWT, reforçando a privacidade e proteção dos dados dos usuários. 100% Responsivo.
+        API REST desenvolvida com C# .NET, EntityFramework para ORM, AutoMapper, Swagger para documentação e SQL Server,
+        com as tabelas criadas por Code First. Data Validations para todas as classes. Segui boas práticas de Clean Code e
+        arquitetura SOLID.</p>
+        <p class="date">Julho 2023 – Dezembro 2023</p>
+    </div>
+
+    <h2>Certificações</h2>
+    <div class="certs">
+        <div class="cert"><p class="t">Docker: criando e gerenciando containers</p><p class="o">Alura</p><p class="d">Agosto 2023</p></div>
+        <div class="cert"><p class="t">.NET 6: criando uma web API</p><p class="o">Alura</p><p class="d">Abril 2023</p></div>
+        <div class="cert"><p class="t">C#: orientação a objetos</p><p class="o">Alura</p><p class="d">Março 2023</p></div>
+        <div class="cert"><p class="t">C#: explorando a linguagem</p><p class="o">Alura</p><p class="d">Fevereiro 2023</p></div>
+        <div class="cert"><p class="t">Formação JavaScript para Front-end</p><p class="o">Alura</p><p class="d">Janeiro 2023</p></div>
+        <div class="cert"><p class="t">Formação Linux Onboarding</p><p class="o">Alura</p><p class="d">Novembro 2022</p></div>
+        <div class="cert"><p class="t">Algoritmos</p><p class="o">UNIASSELVI</p><p class="d">Abril 2022</p></div>
+    </div>
+</body>
+</html>
