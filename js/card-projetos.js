@@ -1,286 +1,127 @@
 const cardData = [
     {
         title: "LabSchool Manager",
-        description: "Sistema de gestão educacional completo com Angular e .NET",
+        description: "Sistema de gestão educacional completo, com dashboard de cards dinâmicos e gráficos.",
         image: "img/layout-3.png",
         category: "fullstack",
         technologies: ["Angular", "C#", ".NET", "SQL Server", "Bootstrap"],
         featured: true,
         links: [
-            {
-                url: "https://github.com/FeReDragon/App-LabSchool-Manager",
-                text: "Frontend",
-                icon: "fab fa-angular"
-            },
-            {
-                url: "https://github.com/FeReDragon/LabSchool-Manager-API",
-                text: "Backend",
-                icon: "fas fa-code"
-            }
+            { url: "https://github.com/FeReDragon/App-LabSchool-Manager", text: "Frontend", icon: "fab fa-angular" },
+            { url: "https://github.com/FeReDragon/LabSchool-Manager-API", text: "Backend", icon: "fas fa-server" }
         ]
     },
     {
         title: "Health Mais Saúde",
-        description: "Plataforma de monitoramento de indicadores de saúde",
+        description: "Plataforma de monitoramento de indicadores de saúde com gráficos e autenticação.",
         image: "img/hms-portifolio.png",
         category: "fullstack",
         technologies: ["Angular", "C#", ".NET", "Chart.js", "JWT"],
         featured: true,
-        link: "https://github.com/FeReDragon/App-portal-mais-saude",
-        buttonText: "Ver Repositório"
+        links: [
+            { url: "https://github.com/FeReDragon/App-portal-mais-saude", text: "Repositório", icon: "fab fa-github" }
+        ]
     },
     {
         title: "App Delivery Lancheria",
-        description: "Aplicativo completo de delivery com geolocalização",
+        description: "Aplicativo de delivery com geolocalização e busca de endereço por CEP.",
         image: "img/applancheria2.png",
-        category: "fullstack",
+        category: "frontend",
         technologies: ["Angular", "TypeScript", "Leaflet", "ViaCEP API"],
         featured: true,
-        link: "https://github.com/FeReDragon/App-Lancheria-Angular",
-        buttonText: "Ver Repositório"
-    },
-    {
-        title: "Demo - App Delivery",
-        description: "Demonstração do aplicativo de delivery em funcionamento",
-        videoLink: "https://www.youtube.com/embed/CjW-nFlwaVA?si=6s93SmkX8oEFdyRs",
-        category: "frontend",
-        technologies: ["Angular", "Responsive Design"]
-    },
-    {
-        title: "Demo - Health Mais Saúde",
-        description: "Vídeo demonstrativo da plataforma de saúde",
-        videoLink: "https://www.youtube.com/embed/k7Q7dnKbrD4?si=z_sUvu7kcqY_l9Gf",
-        category: "frontend",
-        technologies: ["Angular", "Chart.js", "Dashboard"]
+        links: [
+            { url: "https://github.com/FeReDragon/App-Lancheria-Angular", text: "Repositório", icon: "fab fa-github" }
+        ]
     },
     {
         title: "Site Banda Para Festas",
-        description: "Website corporativo responsivo para banda musical",
+        description: "Site institucional responsivo para uma banda de eventos, em produção.",
         image: "img/BandaPAraFestas.png",
         category: "frontend",
         technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
-        link: "https://www.bandaparafestas.com.br",
-        buttonText: "Visitar Site"
+        links: [
+            { url: "https://www.bandaparafestas.com.br", text: "Visitar site", icon: "fas fa-arrow-up-right-from-square" }
+        ]
     },
     {
         title: "App Conecta Rio Vermelho",
-        description: "Aplicação para conectar a comunidade local (em desenvolvimento)",
+        description: "Aplicação para conectar a comunidade local.",
         image: "img/conectaRV.png",
         category: "fullstack",
         technologies: ["Angular", "Node.js", "MongoDB"],
-        status: "Em Desenvolvimento",
         inDevelopment: true
     },
     {
-        title: "Portfólio no GitHub",
-        description: "Acesse todos os meus projetos e contribuições",
+        title: "Demo: App Delivery",
+        description: "Vídeo do aplicativo de delivery em funcionamento.",
+        videoLink: "https://www.youtube-nocookie.com/embed/CjW-nFlwaVA",
+        category: "video",
+        technologies: ["Angular", "Responsive Design"]
+    },
+    {
+        title: "Demo: Health Mais Saúde",
+        description: "Vídeo demonstrativo da plataforma de saúde.",
+        videoLink: "https://www.youtube-nocookie.com/embed/k7Q7dnKbrD4",
+        category: "video",
+        technologies: ["Angular", "Chart.js", "Dashboard"]
+    },
+    {
+        title: "Todos os repositórios",
+        description: "Outros projetos, estudos e contribuições no GitHub.",
         image: "img/perfil-git.png",
-        category: "backend",
+        category: "github",
         technologies: ["Git", "GitHub", "Open Source"],
-        link: "https://github.com/FeReDragon",
-        buttonText: "Ver GitHub"
+        links: [
+            { url: "https://github.com/FeReDragon", text: "Ver GitHub", icon: "fab fa-github" }
+        ]
     }
 ];
 
-
-// Estado da aplicação
-let currentFilter = 'all';
-let projectsContainer = null;
-
-// Função para criar badge de tecnologia
-function createTechBadge(tech) {
-    return `<span class="tech-badge">${tech}</span>`;
-}
-
-// Função para criar ícone de status
-function createStatusBadge(card) {
-    if (card.inDevelopment) {
-        return `<span class="status-badge in-development">
-            <i class="fas fa-code"></i> Em Desenvolvimento
-        </span>`;
-    }
-    if (card.featured) {
-        return `<span class="status-badge featured">
-            <i class="fas fa-star"></i> Destaque
-        </span>`;
-    }
-    return '';
-}
-
-// Função para criar card moderno
 function createCard(card) {
-    const techBadges = card.technologies ? 
-        card.technologies.map(tech => createTechBadge(tech)).join('') : '';
-    
-    const statusBadge = createStatusBadge(card);
-    
-    let mediaContent = '';
-    if (card.image) {
-        mediaContent = `
-            <div class="project-image">
-                <img src="${card.image}" class="card-img-top" alt="${card.title}" loading="lazy">
-                ${statusBadge}
-            </div>`;
-    } else if (card.videoLink) {
-        mediaContent = `
-            <div class="project-video">
-                <iframe 
-                    width="100%" 
-                    height="250" 
-                    src="${card.videoLink}" 
-                    frameborder="0" 
-                    allowfullscreen
-                    loading="lazy">
-                </iframe>
-                ${statusBadge}
-            </div>`;
-    }
+    const status = card.inDevelopment
+        ? '<span class="status dev"><i class="fas fa-code"></i> Em desenvolvimento</span>'
+        : card.featured ? '<span class="status featured"><i class="fas fa-star"></i> Destaque</span>' : '';
 
-    let actionsContent = '';
-    if (card.inDevelopment) {
-        actionsContent = `
-            <div class="project-actions">
-                <span class="btn btn-outline-secondary disabled">
-                    <i class="fas fa-clock me-2"></i>Em Desenvolvimento
-                </span>
-            </div>`;
-    } else if (card.links) {
-        const links = card.links.map(link => `
-            <a href="${link.url}" target="_blank" class="btn btn-custom" 
-               aria-label="${link.text} - ${card.title}">
-                <i class="${link.icon} me-2"></i>${link.text}
-            </a>
-        `).join('');
-        actionsContent = `<div class="project-actions">${links}</div>`;
-    } else if (card.link) {
-        actionsContent = `
-            <div class="project-actions">
-                <a href="${card.link}" target="_blank" class="btn btn-custom"
-                   aria-label="${card.buttonText} - ${card.title}">
-                    <i class="fas fa-external-link-alt me-2"></i>${card.buttonText}
-                </a>
-            </div>`;
-    }
+    const media = card.image
+        ? `<div class="project-media"><img src="${card.image}" alt="${card.title}" loading="lazy">${status}</div>`
+        : `<div class="project-media"><iframe src="${card.videoLink}" title="${card.title}" loading="lazy" allowfullscreen></iframe></div>`;
+
+    const actions = card.inDevelopment
+        ? '<span class="link-btn disabled"><i class="fas fa-clock"></i>Em breve</span>'
+        : (card.links || []).map(link => `
+            <a href="${link.url}" target="_blank" rel="noopener" class="link-btn" aria-label="${link.text} - ${card.title}">
+                <i class="${link.icon}"></i>${link.text}
+            </a>`).join('');
 
     return `
-        <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="${card.category}" data-aos="fade-up">
-            <article class="project-card h-100">
-                ${mediaContent}
-                <div class="card-body">
-                    <h3 class="card-title">${card.title}</h3>
-                    <p class="card-description">${card.description || ''}</p>
-                    <div class="tech-stack-container">
-                        ${techBadges}
-                    </div>
-                    ${actionsContent}
-                </div>
-            </article>
-        </div>`;
+        <article class="glass-card project-card tilt reveal" data-category="${card.category}">
+            ${media}
+            <div class="project-body">
+                <h3>${card.title}</h3>
+                <p>${card.description}</p>
+                <div class="chips">${card.technologies.map(t => `<span>${t}</span>`).join('')}</div>
+                ${actions ? `<div class="project-actions">${actions}</div>` : ''}
+            </div>
+        </article>`;
 }
 
-// Função para filtrar projetos
 function filterProjects(category) {
-    currentFilter = category;
-    const projectItems = document.querySelectorAll('.project-item');
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    
-    // Atualizar botões ativos
-    filterButtons.forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.dataset.filter === category) {
-            btn.classList.add('active');
-        }
+    document.querySelectorAll('#project-filters .filter').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.filter === category);
     });
-    
-    // Filtrar e animar projetos
-    projectItems.forEach((item, index) => {
-        const itemCategory = item.dataset.category;
-        const shouldShow = category === 'all' || itemCategory === category;
-        
-        if (shouldShow) {
-            item.style.display = 'block';
-            setTimeout(() => {
-                item.style.opacity = '1';
-                item.style.transform = 'translateY(0)';
-            }, index * 100);
-        } else {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(20px)';
-            setTimeout(() => {
-                item.style.display = 'none';
-            }, 300);
-        }
+    document.querySelectorAll('.project-card').forEach(item => {
+        const show = category === 'all' || item.dataset.category === category;
+        item.classList.toggle('hidden', !show);
     });
 }
 
-// Função para inicializar os projetos
 function initializeProjects() {
-    projectsContainer = document.getElementById('cards-container');
-    
-    if (!projectsContainer) {
-        console.error('Container de projetos não encontrado');
-        return;
-    }
-    
-    // Renderizar projetos
-    const projectsHTML = cardData.map(card => createCard(card)).join('');
-    projectsContainer.innerHTML = projectsHTML;
-    
-    // Configurar filtros
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const category = btn.dataset.filter;
-            filterProjects(category);
-        });
-    });
-    
-    // Configurar lazy loading para imagens
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src || img.src;
-                    img.classList.remove('lazy');
-                    observer.unobserve(img);
-                }
-            });
-        });
-        
-        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-            imageObserver.observe(img);
-        });
-    }
-    
-    console.log(`✅ ${cardData.length} projetos carregados com sucesso`);
-}
-
-// Função para gerenciar o scroll suave
-function setupSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
+    const container = document.getElementById('cards-container');
+    if (!container) return;
+    container.innerHTML = cardData.map(createCard).join('');
+    document.querySelectorAll('#project-filters .filter').forEach(btn => {
+        btn.addEventListener('click', () => filterProjects(btn.dataset.filter));
     });
 }
 
-// Event listeners
-document.addEventListener('DOMContentLoaded', () => {
-    initializeProjects();
-    setupSmoothScroll();
-});
-
-// Exportar funções para uso global se necessário
-window.portfolioProjects = {
-    filterProjects,
-    initializeProjects,
-    cardData
-};
+initializeProjects();

@@ -3,448 +3,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fernando Montanari Aurelio - Desenvolvedor Full Stack especializado em Java, Angular, PostgreSQL e tecnologias modernas">
-    <meta name="keywords" content="desenvolvedor fullstack, java, angular, postgresql, cube.js, jhipster, frontend, backend">
-    <meta name="author" content="Fernando Montanari Aurelio">
-    <title>Fernando Montanari Aurelio | Desenvolvedor Full Stack</title>
+    <meta name="description" content="Fernando Montanari Aurélio - Engenheiro de Dados e Desenvolvedor Full Stack. GCP, BigQuery, Airflow, dbt, Kafka, Spring Boot e Angular.">
+    <meta name="keywords" content="engenheiro de dados, data engineer, bigquery, airflow, dbt, kafka, gcp, desenvolvedor fullstack, java, spring boot, angular, postgresql">
+    <meta name="author" content="Fernando Montanari Aurélio">
+    <meta name="theme-color" content="#06080c">
+    <meta property="og:title" content="Fernando Montanari Aurélio | Engenheiro de Dados & Full Stack">
+    <meta property="og:description" content="Pipelines de dados e aplicações para saúde: do Kafka ao BigQuery, do dbt ao Power BI.">
+    <meta property="og:image" content="img/fotoperfil.png">
+    <title>Fernando Montanari Aurélio | Engenheiro de Dados & Full Stack</title>
     <link rel="icon" href="img/favicon-new.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=4">
 </head>
-<body class="bg-dark text-white">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#home">
-                <span class="gradient-text">Fernando</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Experiência</a></li>
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#projects">Projetos</a></li>
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contato</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"></div>
 
-    <section id="home" class="hero-section min-vh-100 d-flex align-items-center">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h1 class="display-4 fw-bold mb-4">
+    <header class="nav" id="nav">
+        <div class="container nav-inner">
+            <a class="brand" href="#home" aria-label="Início">
+                <span class="brand-mark">FM</span><span class="brand-name">Fernando<span class="accent">.</span></span>
+            </a>
+            <nav aria-label="Principal">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#pipeline">Dados</a></li>
+                    <li><a href="#experience">Experiência</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#contact" class="nav-cta">Contato</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== HERO ===== -->
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow reveal"><span class="pulse-dot"></span>Aberto a novos desafios · Florianópolis, SC</p>
+                    <h1 class="hero-title reveal">
                         Olá, eu sou <span class="gradient-text">Fernando</span>
                     </h1>
-                    <h2 class="h3 mb-4 text-light-secondary">Desenvolvedor Full Stack</h2>
-                    <p class="lead mb-4 text-light-secondary">
-                        Com foco em <strong>Java</strong>, <strong>Angular</strong>, <strong>SQL</strong> e <strong>Google Cloud Platform</strong>. 
-                        Transformando ideias em soluções digitais práticas e modernas.
+                    <p class="hero-role reveal mono">
+                        <span class="prompt">&gt;</span> <span id="typed">Engenheiro de Dados</span><span class="caret"></span>
                     </p>
-                    <div class="hero-buttons mb-4">
-                        <a href="#contact" class="btn btn-gradient me-3 smooth-scroll">
-                            <i class="fas fa-envelope me-2"></i>Entre em Contato
-                        </a>
-                        <a href="docs/Fernando-FullStack.pdf" class="btn btn-outline-light" download="Fernando_Montanari_Aurelio_Resume">
-                            <i class="fas fa-download me-2"></i>Download CV
-                        </a>
+                    <p class="hero-lead reveal">
+                        Construo pipelines e aplicações que transformam dados clínicos de vários hospitais em decisões.
+                        Do <strong>Kafka</strong> ao <strong>BigQuery</strong>, do <strong>dbt</strong> ao <strong>Power BI</strong>,
+                        com <strong>Spring Boot</strong> e <strong>Angular</strong> quando o produto pede.
+                    </p>
+                    <div class="hero-actions reveal">
+                        <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i>Ver projetos</a>
+                        <a href="docs/Fernando-FullStack.pdf" class="btn btn-ghost" download="Fernando_Montanari_Aurelio_CV"><i class="fas fa-download"></i>Download CV</a>
                     </div>
-                    <div class="social-links">
-                        <a href="https://linkedin.com/in/fernando-montanari-aurélio-a12235254" target="_blank" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/FeReDragon" target="_blank" class="social-link" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="mailto:f3030ma@gmail.com" class="social-link" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="https://wa.me/5548991715395" target="_blank" class="social-link" aria-label="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center" data-aos="fade-left">
-                    <div class="hero-image">
-                        <img src="img/fotoperfil.png" alt="Fernando Montanari Aurelio" class="img-fluid rounded-circle profile-image">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
- <section id="about" class="section-padding bg-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5" data-aos="fade-up">
-                    <h2 class="section-title">Sobre Mim</h2>
-                    <div class="section-divider"></div>
-                </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
-                    <div class="about-image-wrapper">
-                        <img src="img/perfil-git.png" alt="Fernando Montanari Aurelio" class="img-fluid rounded-3 about-image">
-                    </div>
-                </div>
-                <div class="col-lg-7" data-aos="fade-left">
-                    <div class="about-content">
-                        <h3 class="mb-4">Desenvolvedor Full Stack</h3>
-                        <p class="lead mb-4">
-                            Olá! Sou Fernando, desenvolvedor há mais de 1 ano e atualmente trabalho na 
-                            <strong>H:DATA Governança Clínica Digital</strong>. Adoro o que faço e trabalho 
-                            diariamente com <strong>Java</strong>, <strong>Angular</strong>, <strong>PostgreSQL</strong>, 
-                            <strong>Cube.js</strong> e <strong>JHipster</strong>.
-                        </p>
-                        <p class="mb-4">
-                            Minha paixão é resolver problemas reais através do código. Gosto de pensar em como 
-                            tornar aplicações mais eficientes e criar experiências que realmente façam sentido 
-                            para quem as usa. Cada projeto é uma oportunidade de aprender algo novo e encontrar 
-                            soluções criativas para desafios complexos.
-                        </p>
-                        <p class="mb-4">
-                            Quando não estou codando, provavelmente estou explorando novas tecnologias ou 
-                            pensando em como posso melhorar meus próximos projetos. Acredito que a programação 
-                            é uma forma de arte onde lógica e criatividade se encontram.
-                        </p>
-                        <div class="about-info">
-                            <div class="info-item">
-                                <i class="fas fa-map-marker-alt text-primary"></i>
-                                <span>Florianópolis, SC</span>
-                            </div>
-                            <div class="info-item">
-                                <i class="fas fa-briefcase text-primary"></i>
-                                <span>Desenvolvedor Full Stack</span>
-                            </div>
-                            <div class="info-item">
-                                <i class="fas fa-envelope text-primary"></i>
-                                <span>f3030ma@gmail.com</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="section-padding bg-gradient-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5" data-aos="fade-up">
-                    <h2 class="section-title">Experiência Profissional</h2>
-                    <div class="section-divider"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="timeline" data-aos="fade-up">
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h4>Desenvolvedor Full Stack</h4>
-                                <h5 class="text-primary">H:DATA Governança Clínica Digital</h5>
-                                <p class="timeline-date">Fevereiro 2024 - Presente (1 ano 6 meses)</p>
-                                <p class="mb-3">
-                                    Desenvolvimento de soluções completas para governança clínica digital, 
-                                    trabalhando com stack moderna incluindo Java, Angular, PostgreSQL, 
-                                    Cube.js e JHipster.
-                                </p>
-                                <div class="tech-stack">
-                                    <span class="tech-badge">Java</span>
-                                    <span class="tech-badge">Angular</span>
-                                    <span class="tech-badge">PostgreSQL</span>
-                                    <span class="tech-badge">Cube.js</span>
-                                    <span class="tech-badge">JHipster</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="education" class="section-padding bg-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5" data-aos="fade-up">
-                    <h2 class="section-title">Formação</h2>
-                    <div class="section-divider"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="education-grid">
-                        <div class="education-item" data-aos="fade-up" data-aos-delay="100">
-                            <div class="education-icon">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <div class="education-content">
-                                <h4>Engenharia de Software</h4>
-                                <p class="text-primary">UNIASSELVI</p>
-                                <p class="text-light-secondary">(Cursando)</p>
-                            </div>
-                        </div>
-                        <div class="education-item" data-aos="fade-up" data-aos-delay="200">
-                            <div class="education-icon">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <div class="education-content">
-                                <h4>Formação FullStack</h4>
-                                <p class="text-primary">SENAI/SC</p>
-                                <p class="text-light-secondary">2023/2</p>
-                            </div>
-                        </div>
-                        <div class="education-item" data-aos="fade-up" data-aos-delay="300">
-                            <div class="education-icon">
-                                <i class="fas fa-user-md"></i>
-                            </div>
-                            <div class="education-content">
-                                <h4>Bacharel em Enfermagem</h4>
-                                <p class="text-primary">UNILASALLE Canoas-RS</p>
-                                <p class="text-light-secondary">Turma 2011/1</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="p-4 bg-dark text-white">
-        <div class="container">
-            <h2 class="text-center efeito-nome mb-3">Habilidades Técnicas</h2>
-            <!-- Linha de Ícones -->
-            <div class="row icons">
-                <div class="col-12">
-                    <ul class="list-inline text-center">
-                        <!-- Ícones das habilidades -->
-                        <li class="list-inline-item"><i class="fab fa-html5 fa-3x"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-css3-alt fa-3x"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-angular fa-3x"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-microsoft fa-3x"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-docker fa-3x"></i></li>
-                        <li class="list-inline-item"><i class="fas fa-database fa-3x"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-bootstrap fa-3x"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-js-square fa-3x"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-node-js fa-3x"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-linux fa-3x"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-github fa-3x"></i></li>
+                    <ul class="hero-stats reveal">
+                        <li><strong class="mono" data-years-since="2024-02-01">2+</strong><span>anos em produção</span></li>
+                        <li><strong class="mono">3</strong><span>camadas medallion</span></li>
+                        <li><strong class="mono">GCP</strong><span>BigQuery · Composer · Run</span></li>
                     </ul>
+                    <div class="socials reveal">
+                        <a href="https://linkedin.com/in/fernando-montanari-aurélio-a12235254" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/FeReDragon" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="mailto:f3030ma@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://wa.me/5548991715395" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="hero-visual reveal">
+                    <div class="avatar-stage" id="avatar-stage">
+                        <div class="avatar-ring"></div>
+                        <canvas id="avatar-canvas" aria-label="Avatar 3D do Fernando"></canvas>
+                        <img src="img/fotoperfil.png" alt="Fernando Montanari Aurélio" class="avatar-fallback" id="avatar-fallback">
+                        <div class="avatar-loader" id="avatar-loader"><span></span></div>
+                        <div class="float-chip chip-1 mono"><i class="fas fa-wind"></i> airflow</div>
+                        <div class="float-chip chip-2 mono"><i class="fas fa-database"></i> bigquery</div>
+                        <div class="float-chip chip-3 mono"><i class="fas fa-layer-group"></i> dbt</div>
+                    </div>
                 </div>
             </div>
-            <!-- Três Colunas Abaixo dos Ícones -->
-            <div class="row align-items-center">
-                <!-- Coluna 1: Soft Skills -->
-                <div class="col-md-4 col-sm-6">
-                    <div class="card1 mt-3">
-                        <div class="card-body">
-                            <h4>Soft Skills</h4>
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-check me-2 text-success"></i>Colaborativo e trabalho em equipe</li>
-                                <li><i class="fas fa-check me-2 text-success"></i>Proatividade e iniciativa na resolução de problemas</li>
-                                <li><i class="fas fa-check me-2 text-success"></i>Capacidade autodidata e de aprendizado contínuo</li>
-                                <li><i class="fas fa-check me-2 text-success"></i>Organização eficaz e gerenciamento de tempo</li>
-                                <li><i class="fas fa-check me-2 text-success"></i>Pontualidade e Responsabilidade</li>
-                                
+            <a href="#about" class="scroll-hint" aria-label="Rolar para baixo"><span></span></a>
+        </section>
+
+        <!-- ===== SOBRE ===== -->
+        <section id="about" class="section">
+            <div class="container">
+                <header class="section-head reveal">
+                    <span class="section-kicker mono">01 · sobre</span>
+                    <h2 class="section-title">Do plantão hospitalar<br>ao <span class="gradient-text">data warehouse</span></h2>
+                </header>
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <p class="lead">
+                            Sou formado em Enfermagem e hoje trabalho como engenheiro de dados e desenvolvedor full stack na
+                            <strong>H:DATA Governança Clínica Digital</strong>. Conheço os dois lados: o de quem gera o dado no hospital
+                            e o de quem precisa transformá-lo em informação confiável.
+                        </p>
+                        <p>
+                            No dia a dia cuido de um data warehouse multi-hospitalar em arquitetura medallion no Google Cloud:
+                            DAGs do Airflow em produção, modelos dbt, captura com Kafka e integração com o ERP hospitalar TASY.
+                            Também construo as aplicações e painéis que consomem esses dados, com Spring Boot, Angular, Cube.js e
+                            Power BI Embedded.
+                        </p>
+                        <p>
+                            Gosto de entender o problema de verdade antes de escrever código, seja um OOMKill no Composer, um MERGE com chave
+                            duplicada ou uma política de Row-Level Security multi-tenant.
+                        </p>
+                    </div>
+                    <div class="about-cards">
+                        <article class="glass-card tilt reveal">
+                            <i class="fas fa-heart-pulse card-icon"></i>
+                            <h3>Domínio em saúde</h3>
+                            <p>Formação em Enfermagem: entendo o contexto clínico por trás de cada dado hospitalar.</p>
+                        </article>
+                        <article class="glass-card tilt reveal">
+                            <i class="fas fa-diagram-project card-icon"></i>
+                            <h3>Pipelines em produção</h3>
+                            <p>Airflow, dbt e Kafka sustentando dados de múltiplos hospitais no BigQuery.</p>
+                        </article>
+                        <article class="glass-card tilt reveal">
+                            <i class="fas fa-layer-group card-icon"></i>
+                            <h3>Full stack de ponta a ponta</h3>
+                            <p>Do banco ao painel: APIs em Spring Boot, front em Angular/React e BI embarcado.</p>
+                        </article>
+                        <article class="glass-card tilt reveal">
+                            <i class="fas fa-robot card-icon"></i>
+                            <h3>IA no fluxo de trabalho</h3>
+                            <p>Claude Code, agentes e Spec-Driven Development para entregar com mais qualidade.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PIPELINE ===== -->
+        <section id="pipeline" class="section section-alt">
+            <div class="container">
+                <header class="section-head reveal">
+                    <span class="section-kicker mono">02 · como eu trabalho com dados</span>
+                    <h2 class="section-title">Arquitetura <span class="gradient-text">medallion</span> na prática</h2>
+                    <p class="section-sub">O caminho que um dado hospitalar percorre, da origem até o painel. Passe o mouse em cada etapa.</p>
+                </header>
+                <div class="pipeline reveal" id="pipeline-flow">
+                    <div class="stage" style="--c: var(--cyan)">
+                        <span class="stage-step mono">fontes</span>
+                        <i class="fas fa-hospital"></i>
+                        <h3>Origem</h3>
+                        <p>TASY/Oracle, PostgreSQL, SQL Server e eventos via Kafka</p>
+                    </div>
+                    <div class="stage" style="--c: #a78bfa">
+                        <span class="stage-step mono">orquestração</span>
+                        <i class="fas fa-wind"></i>
+                        <h3>Airflow</h3>
+                        <p>Cloud Composer, TaskGroups, TriggerDagRun e operadores em Python</p>
+                    </div>
+                    <div class="stage" style="--c: var(--bronze)">
+                        <span class="stage-step mono">raw</span>
+                        <i class="fas fa-box-archive"></i>
+                        <h3>Bronze</h3>
+                        <p>Ingestão bruta no BigQuery, com rastreio e reprocessamento</p>
+                    </div>
+                    <div class="stage" style="--c: var(--silver)">
+                        <span class="stage-step mono">silver</span>
+                        <i class="fas fa-filter"></i>
+                        <h3>Silver</h3>
+                        <p>Modelos dbt, deduplicação, MERGE e backfills</p>
+                    </div>
+                    <div class="stage" style="--c: var(--gold)">
+                        <span class="stage-step mono">gold</span>
+                        <i class="fas fa-gem"></i>
+                        <h3>Gold</h3>
+                        <p>Indicadores clínicos prontos para consumo, por hospital</p>
+                    </div>
+                    <div class="stage" style="--c: var(--lime)">
+                        <span class="stage-step mono">consumo</span>
+                        <i class="fas fa-chart-pie"></i>
+                        <h3>Entrega</h3>
+                        <p>Power BI Embedded com RLS, Cube.js e relatórios automáticos por WhatsApp</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EXPERIÊNCIA ===== -->
+        <section id="experience" class="section">
+            <div class="container">
+                <header class="section-head reveal">
+                    <span class="section-kicker mono">03 · experiência</span>
+                    <h2 class="section-title">Experiência <span class="gradient-text">profissional</span></h2>
+                </header>
+                <div class="timeline">
+                    <article class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card">
+                            <div class="timeline-head">
+                                <div>
+                                    <h3>Engenheiro de Dados &amp; Desenvolvedor Full Stack</h3>
+                                    <p class="company">H:DATA Governança Clínica Digital</p>
+                                </div>
+                                <span class="date mono">fev 2024 · presente · <span data-duration-since="2024-02-01"></span></span>
+                            </div>
+                            <ul class="bullets">
+                                <li>Sustentação e evolução de um <strong>data warehouse multi-hospitalar</strong> em arquitetura medallion (raw → silver → gold) no BigQuery.</li>
+                                <li>DAGs do <strong>Apache Airflow</strong> em produção no Cloud Composer, incluindo diagnóstico de OOMKill, saturação de fila e erros 409/429 do BigQuery.</li>
+                                <li>Modelos <strong>dbt</strong> silver/gold, tratamento de MERGE com chave duplicada e backfills; pipelines de captura com <strong>Kafka</strong>.</li>
+                                <li>Integração com o ERP hospitalar <strong>TASY</strong> (Oracle, views, SQL*Plus) e conversão de SQL entre dialetos.</li>
+                                <li><strong>Power BI Embedded</strong> com Service Principal e RLS multi-tenant; otimização de pré-agregações no <strong>Cube.js</strong>.</li>
+                                <li>Aplicações com <strong>Spring Boot</strong>/JHipster e <strong>Angular</strong>, relatórios automáticos por WhatsApp com Jinja e e-mail com SendGrid.</li>
                             </ul>
+                            <div class="chips">
+                                <span>BigQuery</span><span>Airflow</span><span>dbt</span><span>Kafka</span><span>Python</span><span>Oracle/TASY</span><span>PostgreSQL</span><span>Spring Boot</span><span>Angular</span><span>Power BI</span><span>Cube.js</span><span>Terraform</span>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <!-- Coluna 2: Imagem -->
-                <div class="col-md-4 col-sm-6">
-                    <div class="cube-container">
-                        <div class="cube">
-                            <div class="face front">HTML</div>
-                            <div class="face back">JavaScript</div>
-                            <div class="face right">Angular</div>
-                            <div class="face left">Java</div>
-                            <div class="face top">Docker</div>
-                            <div class="face bottom">SQL</div>
-                         </div>
-                    <img src="img/avatar3d.png" class="img-fluid2" alt="Tecnologia Neon Azul" style="height: 600px;">
-                </div>
-            </div>
-            <!-- Coluna 3: Hard Skills -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card1 mt-3">
-                    <div class="card-body">
-                        <h4>Hard Skills</h4>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check me-2 text-success"></i>HTML5</li>
-                            <li><i class="fas fa-check me-2 text-success"></i>CSS3</li>
-                            <li><i class="fas fa-check me-2 text-success"></i>Bootstrap</li>
-                            <li><i class="fas fa-check me-2 text-success"></i>Angular</li>
-                            <li><i class="fas fa-check me-2 text-success"></i>Javascript/Typescript</li>
-                            <li><i class="fas fa-check me-2 text-success"></i>.NET</li>
-                            <li><i class="fas fa-check me-2 text-success"></i>Java</li>
-                            <li><i class="fas fa-check me-2 text-success"></i>Docker</li>
-                            <li><i class="fas fa-check me-2 text-success"></i>GCP e Azure</li>
-                            <li><i class="fas fa-check me-2 text-success"></i>GIT/Github</li>
-                            <li><i class="fas fa-check me-2 text-success"></i>SCRUM e Kanban</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </section>
-
-    <section id="projects" class="section-padding bg-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5" data-aos="fade-up">
-                    <h2 class="section-title">Projetos Destacados</h2>
-                    <div class="section-divider"></div>
-                    <p class="lead text-light-secondary">
-                        Aqui estão alguns dos projetos que desenvolvi utilizando tecnologias modernas
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="projects-filter mb-4 text-center" data-aos="fade-up">
-                        <button class="filter-btn active" data-filter="all">Todos</button>
-                        <button class="filter-btn" data-filter="fullstack">Full Stack</button>
-                        <button class="filter-btn" data-filter="frontend">Frontend</button>
-                        <button class="filter-btn" data-filter="backend">Backend</button>
-                    </div>
-                </div>
-            </div>
-            <div id="cards-container" class="row projects-grid">
-                <!-- cards carregados dinamicamente -->
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section-padding bg-gradient-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5" data-aos="fade-up">
-                    <h2 class="section-title">Vamos Conversar?</h2>
-                    <div class="section-divider"></div>
-                    <p class="lead text-light-secondary">
-                        Estou sempre aberto a novas oportunidades e projetos interessantes
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="contact-form" data-aos="fade-up">
-                        <form id="contactForm" class="needs-validation" novalidate>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="name" class="form-label">Nome</label>
-                                    <input type="text" class="form-control" id="name" required>
-                                    <div class="invalid-feedback">Por favor, insira seu nome.</div>
+                    </article>
+                    <article class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card">
+                            <div class="timeline-head">
+                                <div>
+                                    <h3>Formação Full Stack: projetos práticos</h3>
+                                    <p class="company">SENAI/SC</p>
                                 </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email" required>
-                                    <div class="invalid-feedback">Por favor, insira um email válido.</div>
-                                </div>
+                                <span class="date mono">2023</span>
                             </div>
-                            <div class="mb-3">
-                                <label for="subject" class="form-label">Assunto</label>
-                                <input type="text" class="form-control" id="subject" required>
-                                <div class="invalid-feedback">Por favor, insira o assunto.</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Mensagem</label>
-                                <textarea class="form-control" id="message" rows="5" required></textarea>
-                                <div class="invalid-feedback">Por favor, insira sua mensagem.</div>
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-gradient btn-lg">
-                                    <i class="fas fa-paper-plane me-2"></i>Enviar Mensagem
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-12 text-center">
-                    <div class="contact-info">
-                        <h4 class="mb-4">Outras formas de contato</h4>
-                        <div class="contact-methods">
-                            <a href="mailto:f3030ma@gmail.com" class="contact-method" data-aos="zoom-in" data-aos-delay="100">
-                                <i class="fas fa-envelope"></i>
-                                <span>f3030ma@gmail.com</span>
-                            </a>
-                            <a href="https://wa.me/5548991715395" target="_blank" class="contact-method" data-aos="zoom-in" data-aos-delay="200">
-                                <i class="fab fa-whatsapp"></i>
-                                <span>+55 (48) 99171-5395</span>
-                            </a>
-                            <a href="https://linkedin.com/in/fernando-montanari-aurélio-a12235254" target="_blank" class="contact-method" data-aos="zoom-in" data-aos-delay="300">
-                                <i class="fab fa-linkedin-in"></i>
-                                <span>LinkedIn</span>
-                            </a>
-                            <a href="https://github.com/FeReDragon" target="_blank" class="contact-method" data-aos="zoom-in" data-aos-delay="400">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
-                            </a>
+                            <ul class="bullets">
+                                <li>Aplicações completas com Angular e APIs REST em .NET/C# com Entity Framework Core.</li>
+                                <li>Dashboards com Chart.js, autenticação JWT e metodologias ágeis (Scrum e Kanban).</li>
+                            </ul>
+                            <div class="chips"><span>Angular</span><span>.NET</span><span>C#</span><span>SQL Server</span><span>Git</span></div>
                         </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SKILLS ===== -->
+        <section id="skills" class="section section-alt">
+            <div class="container">
+                <header class="section-head reveal">
+                    <span class="section-kicker mono">04 · stack</span>
+                    <h2 class="section-title">Habilidades <span class="gradient-text">técnicas</span></h2>
+                    <p class="section-sub">Arraste a esfera ou escolha uma área para ver os detalhes.</p>
+                </header>
+                <div class="skills-grid">
+                    <div class="sphere-wrap reveal">
+                        <div class="tag-sphere" id="tag-sphere" aria-hidden="true"></div>
+                    </div>
+                    <div class="skills-panel reveal">
+                        <div class="skill-tabs" role="tablist" id="skill-tabs"></div>
+                        <div class="skill-body glass-card" id="skill-body" role="tabpanel"></div>
+                    </div>
+                </div>
+                <div class="soft-skills reveal">
+                    <h3 class="mono">// soft skills</h3>
+                    <div class="chips chips-lg">
+                        <span><i class="fas fa-people-group"></i>Trabalho em equipe</span>
+                        <span><i class="fas fa-bolt"></i>Proatividade</span>
+                        <span><i class="fas fa-book-open"></i>Autodidata</span>
+                        <span><i class="fas fa-magnifying-glass"></i>Diagnóstico de problemas</span>
+                        <span><i class="fas fa-clock"></i>Organização e responsabilidade</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="bg-dark text-white py-4">
-        <div class="container text-center">
-            <p class="mb-0">&copy; 2024 Fernando Montanari Aurelio. Todos os direitos reservados.</p>
-            <p class="small text-light-secondary mb-0">Desenvolvido com ❤️ em Florianópolis, SC</p>
+        <!-- ===== FORMAÇÃO ===== -->
+        <section id="education" class="section">
+            <div class="container">
+                <header class="section-head reveal">
+                    <span class="section-kicker mono">05 · formação</span>
+                    <h2 class="section-title">Formação <span class="gradient-text">acadêmica</span></h2>
+                </header>
+                <div class="edu-grid">
+                    <article class="glass-card tilt reveal">
+                        <i class="fas fa-graduation-cap card-icon"></i>
+                        <h3>Engenharia de Software</h3>
+                        <p class="company">UNIASSELVI</p>
+                        <span class="date mono">cursando</span>
+                    </article>
+                    <article class="glass-card tilt reveal">
+                        <i class="fas fa-code card-icon"></i>
+                        <h3>Formação Full Stack</h3>
+                        <p class="company">SENAI/SC</p>
+                        <span class="date mono">2023</span>
+                    </article>
+                    <article class="glass-card tilt reveal">
+                        <i class="fas fa-user-nurse card-icon"></i>
+                        <h3>Bacharel em Enfermagem</h3>
+                        <p class="company">UNILASALLE · Canoas-RS</p>
+                        <span class="date mono">turma 2011/1</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROJETOS ===== -->
+        <section id="projects" class="section section-alt">
+            <div class="container">
+                <header class="section-head reveal">
+                    <span class="section-kicker mono">06 · projetos</span>
+                    <h2 class="section-title">Projetos em <span class="gradient-text">destaque</span></h2>
+                    <p class="section-sub">Projetos pessoais e de formação. O trabalho na H:DATA é privado, mas está resumido acima.</p>
+                </header>
+                <div class="filters reveal" id="project-filters">
+                    <button class="filter active" data-filter="all">Todos</button>
+                    <button class="filter" data-filter="fullstack">Full Stack</button>
+                    <button class="filter" data-filter="frontend">Frontend</button>
+                    <button class="filter" data-filter="video">Demos</button>
+                </div>
+                <div class="projects-grid" id="cards-container"></div>
+            </div>
+        </section>
+
+        <!-- ===== CONTATO ===== -->
+        <section id="contact" class="section">
+            <div class="container">
+                <header class="section-head reveal">
+                    <span class="section-kicker mono">07 · contato</span>
+                    <h2 class="section-title">Vamos <span class="gradient-text">conversar?</span></h2>
+                    <p class="section-sub">Aberto a oportunidades em engenharia de dados e desenvolvimento full stack.</p>
+                </header>
+                <div class="contact-grid">
+                    <form class="glass-card contact-form reveal" id="contact-form" novalidate>
+                        <div class="field-row">
+                            <label class="field">
+                                <span>Nome</span>
+                                <input type="text" name="name" required autocomplete="name">
+                            </label>
+                            <label class="field">
+                                <span>Assunto</span>
+                                <input type="text" name="subject" required>
+                            </label>
+                        </div>
+                        <label class="field">
+                            <span>Mensagem</span>
+                            <textarea name="message" rows="5" required></textarea>
+                        </label>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i>Enviar por e-mail</button>
+                        <p class="form-note">Abre o seu cliente de e-mail com a mensagem pronta.</p>
+                    </form>
+                    <div class="contact-links reveal">
+                        <a href="mailto:f3030ma@gmail.com" class="contact-link glass-card">
+                            <i class="fas fa-envelope"></i><div><strong>E-mail</strong><span>f3030ma@gmail.com</span></div>
+                        </a>
+                        <a href="https://wa.me/5548991715395" target="_blank" rel="noopener" class="contact-link glass-card">
+                            <i class="fab fa-whatsapp"></i><div><strong>WhatsApp</strong><span>+55 (48) 99171-5395</span></div>
+                        </a>
+                        <a href="https://linkedin.com/in/fernando-montanari-aurélio-a12235254" target="_blank" rel="noopener" class="contact-link glass-card">
+                            <i class="fab fa-linkedin-in"></i><div><strong>LinkedIn</strong><span>Fernando Montanari Aurélio</span></div>
+                        </a>
+                        <a href="https://github.com/FeReDragon" target="_blank" rel="noopener" class="contact-link glass-card">
+                            <i class="fab fa-github"></i><div><strong>GitHub</strong><span>@FeReDragon</span></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p>&copy; <span id="year">2026</span> Fernando Montanari Aurélio</p>
+            <p class="mono muted">feito com Three.js em Florianópolis, SC</p>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="js/card-projetos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
-        
-        // Smooth scrolling
-        document.querySelectorAll('.smooth-scroll').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
-        
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('mainNav');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-        
-        // Contact form validation
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            if (this.checkValidity()) {
-                alert('Mensagem enviada com sucesso!');
-                this.reset();
-            }
-            this.classList.add('was-validated');
-        });
-    </script>
+    <script src="js/card-projetos.js?v=4"></script>
+    <script src="js/main.js?v=4"></script>
+    <script src="js/avatar-data.js?v=4" defer></script>
+    <script src="js/scene3d.bundle.js?v=4" defer></script>
 </body>
 </html>
