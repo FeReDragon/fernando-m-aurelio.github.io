@@ -8,7 +8,7 @@
     <meta name="author" content="Fernando Montanari Aurélio">
     <meta name="theme-color" content="#06080c">
     <meta property="og:title" content="Fernando Montanari Aurélio | Engenheiro de Dados & Full Stack">
-    <meta property="og:description" content="Pipelines de dados e aplicações para saúde: do Kafka ao BigQuery, do dbt ao Power BI.">
+    <meta property="og:description" content="Pipelines de dados e aplicações: do Kafka ao BigQuery, do dbt ao Power BI.">
     <meta property="og:image" content="img/fotoperfil.png">
     <title>Fernando Montanari Aurélio | Engenheiro de Dados & Full Stack</title>
     <link rel="icon" href="img/favicon-new.ico" type="image/x-icon">
@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=4">
+    <link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
     <canvas id="bg-canvas" aria-hidden="true"></canvas>
@@ -57,7 +57,7 @@
                         <span class="prompt">&gt;</span> <span id="typed">Engenheiro de Dados</span><span class="caret"></span>
                     </p>
                     <p class="hero-lead reveal">
-                        Construo pipelines e aplicações que transformam dados clínicos de vários hospitais em decisões.
+                        Construo pipelines de dados e aplicações que transformam dados em decisões.
                         Do <strong>Kafka</strong> ao <strong>BigQuery</strong>, do <strong>dbt</strong> ao <strong>Power BI</strong>,
                         com <strong>Spring Boot</strong> e <strong>Angular</strong> quando o produto pede.
                     </p>
@@ -97,36 +97,32 @@
             <div class="container">
                 <header class="section-head reveal">
                     <span class="section-kicker mono">01 · sobre</span>
-                    <h2 class="section-title">Do plantão hospitalar<br>ao <span class="gradient-text">data warehouse</span></h2>
+                    <h2 class="section-title">Transformando dados<br>em <span class="gradient-text">decisões</span></h2>
                 </header>
                 <div class="about-grid">
                     <div class="about-text reveal">
                         <p class="lead">
-                            Sou formado em Enfermagem e hoje trabalho como engenheiro de dados e desenvolvedor full stack na
-                            <strong>H:DATA Governança Clínica Digital</strong>. Conheço os dois lados: o de quem gera o dado no hospital
-                            e o de quem precisa transformá-lo em informação confiável.
+                            Sou engenheiro de dados e desenvolvedor full stack na <strong>H:DATA</strong>. Meu trabalho é
+                            levar o dado da origem até quem precisa dele, de forma confiável, e construir as aplicações que o consomem.
                         </p>
                         <p>
-                            No dia a dia cuido de um data warehouse multi-hospitalar em arquitetura medallion no Google Cloud:
-                            DAGs do Airflow em produção, modelos dbt, captura com Kafka e integração com o ERP hospitalar TASY.
-                            Também construo as aplicações e painéis que consomem esses dados, com Spring Boot, Angular, Cube.js e
-                            Power BI Embedded.
+                            Trabalho principalmente com Google Cloud, Airflow, dbt e Kafka na camada de dados, e com
+                            Spring Boot, Angular e ferramentas de BI na camada de aplicação.
                         </p>
                         <p>
-                            Gosto de entender o problema de verdade antes de escrever código, seja um OOMKill no Composer, um MERGE com chave
-                            duplicada ou uma política de Row-Level Security multi-tenant.
+                            Vim da Enfermagem para a tecnologia, e gosto de entender o problema de verdade antes de escrever código.
                         </p>
                     </div>
                     <div class="about-cards">
                         <article class="glass-card tilt reveal">
-                            <i class="fas fa-heart-pulse card-icon"></i>
-                            <h3>Domínio em saúde</h3>
-                            <p>Formação em Enfermagem: entendo o contexto clínico por trás de cada dado hospitalar.</p>
+                            <i class="fas fa-cloud card-icon"></i>
+                            <h3>Cloud &amp; dados</h3>
+                            <p>Google Cloud, BigQuery e arquitetura medallion para dados organizados e confiáveis.</p>
                         </article>
                         <article class="glass-card tilt reveal">
                             <i class="fas fa-diagram-project card-icon"></i>
                             <h3>Pipelines em produção</h3>
-                            <p>Airflow, dbt e Kafka sustentando dados de múltiplos hospitais no BigQuery.</p>
+                            <p>Orquestração com Airflow, modelagem com dbt e captura de eventos com Kafka.</p>
                         </article>
                         <article class="glass-card tilt reveal">
                             <i class="fas fa-layer-group card-icon"></i>
@@ -149,44 +145,44 @@
                 <header class="section-head reveal">
                     <span class="section-kicker mono">02 · como eu trabalho com dados</span>
                     <h2 class="section-title">Arquitetura <span class="gradient-text">medallion</span> na prática</h2>
-                    <p class="section-sub">O caminho que um dado hospitalar percorre, da origem até o painel. Passe o mouse em cada etapa.</p>
+                    <p class="section-sub">O caminho de um dado, da origem até o painel. Passe o mouse em cada etapa.</p>
                 </header>
                 <div class="pipeline reveal" id="pipeline-flow">
                     <div class="stage" style="--c: var(--cyan)">
                         <span class="stage-step mono">fontes</span>
-                        <i class="fas fa-hospital"></i>
+                        <i class="fas fa-database"></i>
                         <h3>Origem</h3>
-                        <p>TASY/Oracle, PostgreSQL, SQL Server e eventos via Kafka</p>
+                        <p>Bancos relacionais, APIs e eventos via Kafka</p>
                     </div>
                     <div class="stage" style="--c: #a78bfa">
                         <span class="stage-step mono">orquestração</span>
                         <i class="fas fa-wind"></i>
                         <h3>Airflow</h3>
-                        <p>Cloud Composer, TaskGroups, TriggerDagRun e operadores em Python</p>
+                        <p>DAGs no Cloud Composer com operadores em Python</p>
                     </div>
                     <div class="stage" style="--c: var(--bronze)">
                         <span class="stage-step mono">raw</span>
                         <i class="fas fa-box-archive"></i>
                         <h3>Bronze</h3>
-                        <p>Ingestão bruta no BigQuery, com rastreio e reprocessamento</p>
+                        <p>Dado bruto no BigQuery, pronto para reprocessar</p>
                     </div>
                     <div class="stage" style="--c: var(--silver)">
                         <span class="stage-step mono">silver</span>
                         <i class="fas fa-filter"></i>
                         <h3>Silver</h3>
-                        <p>Modelos dbt, deduplicação, MERGE e backfills</p>
+                        <p>Limpeza e padronização com dbt</p>
                     </div>
                     <div class="stage" style="--c: var(--gold)">
                         <span class="stage-step mono">gold</span>
                         <i class="fas fa-gem"></i>
                         <h3>Gold</h3>
-                        <p>Indicadores clínicos prontos para consumo, por hospital</p>
+                        <p>Métricas confiáveis, prontas para consumo</p>
                     </div>
                     <div class="stage" style="--c: var(--lime)">
                         <span class="stage-step mono">consumo</span>
                         <i class="fas fa-chart-pie"></i>
                         <h3>Entrega</h3>
-                        <p>Power BI Embedded com RLS, Cube.js e relatórios automáticos por WhatsApp</p>
+                        <p>Painéis de BI, APIs e relatórios automáticos</p>
                     </div>
                 </div>
             </div>
@@ -206,20 +202,17 @@
                             <div class="timeline-head">
                                 <div>
                                     <h3>Engenheiro de Dados &amp; Desenvolvedor Full Stack</h3>
-                                    <p class="company">H:DATA Governança Clínica Digital</p>
+                                    <p class="company">H:DATA</p>
                                 </div>
                                 <span class="date mono">fev 2024 · presente · <span data-duration-since="2024-02-01"></span></span>
                             </div>
                             <ul class="bullets">
-                                <li>Sustentação e evolução de um <strong>data warehouse multi-hospitalar</strong> em arquitetura medallion (raw → silver → gold) no BigQuery.</li>
-                                <li>DAGs do <strong>Apache Airflow</strong> em produção no Cloud Composer, incluindo diagnóstico de OOMKill, saturação de fila e erros 409/429 do BigQuery.</li>
-                                <li>Modelos <strong>dbt</strong> silver/gold, tratamento de MERGE com chave duplicada e backfills; pipelines de captura com <strong>Kafka</strong>.</li>
-                                <li>Integração com o ERP hospitalar <strong>TASY</strong> (Oracle, views, SQL*Plus) e conversão de SQL entre dialetos.</li>
-                                <li><strong>Power BI Embedded</strong> com Service Principal e RLS multi-tenant; otimização de pré-agregações no <strong>Cube.js</strong>.</li>
-                                <li>Aplicações com <strong>Spring Boot</strong>/JHipster e <strong>Angular</strong>, relatórios automáticos por WhatsApp com Jinja e e-mail com SendGrid.</li>
+                                <li>Engenharia de dados no Google Cloud: <strong>BigQuery</strong>, <strong>Airflow</strong> (Cloud Composer), <strong>dbt</strong> e <strong>Kafka</strong> em arquitetura medallion.</li>
+                                <li>Painéis e camadas de BI com <strong>Power BI Embedded</strong> e <strong>Cube.js</strong>.</li>
+                                <li>Desenvolvimento de aplicações com <strong>Spring Boot</strong> e <strong>Angular</strong>.</li>
                             </ul>
                             <div class="chips">
-                                <span>BigQuery</span><span>Airflow</span><span>dbt</span><span>Kafka</span><span>Python</span><span>Oracle/TASY</span><span>PostgreSQL</span><span>Spring Boot</span><span>Angular</span><span>Power BI</span><span>Cube.js</span><span>Terraform</span>
+                                <span>BigQuery</span><span>Airflow</span><span>dbt</span><span>Kafka</span><span>Python</span><span>PostgreSQL</span><span>Spring Boot</span><span>Angular</span><span>Power BI</span><span>Cube.js</span><span>Terraform</span>
                             </div>
                         </div>
                     </article>
@@ -375,9 +368,9 @@
         </div>
     </footer>
 
-    <script src="js/card-projetos.js?v=4"></script>
-    <script src="js/main.js?v=4"></script>
-    <script src="js/avatar-data.js?v=4" defer></script>
-    <script src="js/scene3d.bundle.js?v=4" defer></script>
+    <script src="js/card-projetos.js?v=5"></script>
+    <script src="js/main.js?v=5"></script>
+    <script src="js/avatar-data.js?v=5" defer></script>
+    <script src="js/scene3d.bundle.js?v=5" defer></script>
 </body>
 </html>

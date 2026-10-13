@@ -5,29 +5,29 @@ const finePointer = window.matchMedia('(pointer: fine)').matches;
 const skillGroups = [
     {
         id: 'data', label: 'Engenharia de Dados', icon: 'fa-diagram-project',
-        desc: 'Meu ponto mais forte hoje: pipelines em produção para um data warehouse multi-hospitalar.',
+        desc: 'Meu ponto mais forte hoje: pipelines de dados em produção no Google Cloud.',
         items: [
             ['Google Cloud', 'BigQuery, Cloud Composer e Cloud Run'],
-            ['Apache Airflow', 'DAGs em produção, TaskGroups, TriggerDagRunOperator; diagnóstico de OOMKill, saturação de fila e erros 409/429 do BigQuery'],
+            ['Apache Airflow', 'DAGs em produção, TaskGroups e orquestração entre DAGs'],
             ['dbt', 'Modelos silver/gold, MERGE com chave duplicada e backfills'],
             ['Kafka', 'Pipelines de captura integrados ao Airflow'],
-            ['Medallion', 'Arquitetura raw → silver → gold em DW multi-hospitalar'],
+            ['Medallion', 'Arquitetura raw → silver → gold em data warehouse'],
             ['Python', 'Operadores, upserts e guard clauses em pipelines'],
-            ['Pimcore', 'MDM e normalização de dados de saúde']
+            ['Pimcore', 'MDM e normalização de dados']
         ],
         tags: ['BigQuery', 'Airflow', 'dbt', 'Kafka', 'Python', 'Composer', 'Cloud Run', 'GCP', 'Medallion', 'Pimcore']
     },
     {
         id: 'db', label: 'Bancos de Dados', icon: 'fa-database',
-        desc: 'Camadas analíticas e transacionais, de ERP hospitalar a OLTP moderno.',
+        desc: 'Bancos analíticos e transacionais, do legado ao moderno.',
         items: [
             ['PostgreSQL', 'Camada analítica e transacional'],
-            ['Oracle', 'SQL*Plus e views no ERP hospitalar TASY'],
+            ['Oracle', 'SQL*Plus, views e integração com ERP'],
             ['SQL Server', 'Projetos .NET e integrações'],
             ['Supabase', 'OLTP e migração entre organizações'],
             ['SQL multidialeto', 'Conversão de SQL entre dialetos (BigQuery → Oracle)']
         ],
-        tags: ['PostgreSQL', 'Oracle', 'TASY', 'SQL Server', 'Supabase', 'SQL']
+        tags: ['PostgreSQL', 'Oracle', 'SQL Server', 'Supabase', 'SQL']
     },
     {
         id: 'dev', label: 'Backend & Frontend', icon: 'fa-code',
@@ -216,7 +216,7 @@ function initDurations() {
 function initTyped() {
     const el = document.getElementById('typed');
     if (!el || reduceMotion) return;
-    const roles = ['Engenheiro de Dados', 'Desenvolvedor Full Stack', 'Airflow · dbt · BigQuery', 'Spring Boot · Angular', 'Dados de saúde'];
+    const roles = ['Engenheiro de Dados', 'Desenvolvedor Full Stack', 'Airflow · dbt · BigQuery', 'Spring Boot · Angular', 'Google Cloud'];
     let role = 0, chars = roles[0].length, deleting = true;
     const step = () => {
         const text = roles[role];
